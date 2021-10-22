@@ -3,6 +3,7 @@
 {
     --color-bg: rgb(50, 50, 50);
     --color-text: rgb(240, 240, 240);
+    --color-text-important: rgb(255, 130, 0);
     --color-footer-gradient-end: rgb(10, 10, 10);
 }
 
@@ -13,6 +14,7 @@
     padding: 0;
     font-family: 'Verdana', 'Helvetica', 'Arial';
     font-size: small;
+    text-align: justify;
     color: var(--color-text);
 }
 
@@ -39,8 +41,9 @@ header
 
 .title
 {
-    font-size: large;
+    font-size: 2em;
     font-weight: bolder;
+    color: var(--color-text-important);
 }
 
 .subtitle
@@ -53,6 +56,44 @@ header
 {
     padding: 0.5em;
     text-align: center;
+}
+
+section
+{
+    padding: 1em 0;
+}
+
+section > h2
+{
+    font-size: 1.2em;
+    color: var(--color-text-important);
+    margin-bottom: 0.4em;
+}
+
+section > p
+{
+    margin: 0.8em 0;
+}
+
+section > img
+{
+    display: block;
+    max-height: 20em;
+    max-width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+section > ul,
+section > ol
+{
+    padding: 0 2em;
+}
+
+section > ul > li,
+section > ol > li
+{
+    padding: 0.4em 0;
 }
 
 .footer_pusher
@@ -74,5 +115,5 @@ footer
 footer > img
 {
     border-radius: 15%;
-    max-height: 8em;
+    max-height: 7em;
 }
