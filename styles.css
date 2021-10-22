@@ -75,7 +75,7 @@ section > p
     margin: 0.8em 0;
 }
 
-section > img
+section img
 {
     display: block;
     max-height: 20em;
@@ -112,7 +112,7 @@ footer
     background-image: linear-gradient(var(--color-bg), var(--color-footer-gradient-end));
 }
 
-footer > img
+footer img
 {
     border-radius: 15%;
     max-height: 7em;
