@@ -103,6 +103,48 @@
 
         </p>
       </section>
+
+      <section>
+        <h2>Unity: Tutorial de 2D Platformers</h2>
+
+        <p>
+          Nestas aulas, o projeto usado não se encontrava na secção "Learn" do Unity Hub.
+          Em vez disso, tive que criar um novo projeto, na secção: "Projects" &rarr; "New".
+        </p>
+
+        <img src="images/2dPlatformer-1.png" title="Creating a new project with a 2D platformer template">
+
+        <p>
+          O primeiro passo do tutorial foi a experimentação do jogo. Este aparenta ser bastante simples:
+          o jogador apenas consegue mover a personagem principal e fazê-la saltar.
+          Os inimigos são umas gomas que rastejam no chão e que podem ser derrotadas com um salto nas suas cabeças.
+          O jogador perde o jogo se levar qualquer tipo de dano, quer pelos inimigos, quer por cair fora do nível.
+        </p>
+
+        <div class="image-row">
+          <img src="images/2dPlatformer-2.png" title="The 2D platformer in action">
+          <img src="images/2dPlatformer-3.png" title="The Unity Editor window with the 2D platformer project open">
+        </div>
+
+        <p>
+          A primeira alteração que eu fiz foi a adição de um tronco de uma árvore
+          (localizado em "Mod Assets" &rarr; "2D Props").
+          Para que este objeto colidisse com o jogador, adicionou-se um componente "Box Collider" ao tronco.
+          No entanto, este não funcionou, pois o Unity diferencia entre os colidores 3D e os 2D.
+          Como tal, troquei os componentes e ajustei o tamanho da caixa, para corrigir a distância de colisão entre o jogador e o tronco.
+          O jogador era agora impedido de andar atravéz do tronco e podia saltar para cima dele.
+        </p>
+
+        <div class="image-row">
+          <img src="images/2dPlatformer-4.png" title="Tronco com componente &quot;Box Collider 2D&quot;">
+          <img src="images/2dPlatformer-5.png" title="Jogador em cima do tronco">
+        </div>
+        
+
+        <!-- <p>
+          O nível em si consiste de telhas em grelha.
+        </p> -->
+      </section>
     </main>
 
     <!-- <div class="footer_pusher"></div> -->
