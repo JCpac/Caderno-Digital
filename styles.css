@@ -63,14 +63,14 @@ section
     padding: 1em 0;
 }
 
-section > h2
+section h2
 {
     font-size: 1.2em;
     color: var(--color-text-important);
     margin-bottom: 0.4em;
 }
 
-section > p
+section p
 {
     margin: 0.8em 0;
 }
@@ -84,14 +84,14 @@ section img
     border-radius: 10px;
 }
 
-section > ul,
-section > ol
+section ul,
+section ol
 {
     padding: 0 2em;
 }
 
-section > ul > li,
-section > ol > li
+section ul li,
+section ol li
 {
     padding: 0.4em 0;
 }
