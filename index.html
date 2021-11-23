@@ -155,17 +155,68 @@
         <h2>Trabalho Prático 1</h2>
 
         <p>
-          Para a realização deste trabalho prático, o &quot;GameKit&quot; escolhido foi o &laquo;<strong>GAMEKIT</strong>&raquo;.
+          Como o objetivo deste trabalho consiste na criação de um novo nível,
+          considerei utilizar o &quot;GameKit&quot; que proporcionasse a maior facilidade na construção de novas partes da cena,
+          mantendo um nível adequado de versatilidade.
+          Por essas razões, para a realização deste trabalho prático,
+          o &quot;GameKit&quot; escolhido foi o <strong>Karting Microgame</strong>.
         </p>
 
         <p>
-          Ideias:
+          Ideias iniciais para o Karting Microgame:
           <ul>
-            <li>Platformer &mdash; duplo-salto, zonas secretas/bónus, inimigos com ataques à distância;</li>
-            <li>Kart &mdash; saltos com rampas, salto autónomo, melhorar sistema de checkpoints (checkpoints ordenados, só pode acabar a corrida na meta, etc.);</li>
-            <li>FPS &mdash; novas mecânicas para as armas, zonas secretas/bónus;</li>
+            <li>Faixas de pista divididas, preferencialmente com diferentes graus de dificuldade;</li>
+            <li>Saltos com rampas/precipícios;</li>
+            <li>Pontes;</li>
+            <li>Loops;</li>
+            <li>
+              Melhorar o sistema de &quot;checkpoints&quot;&colon;
+              &quot;checkpoints&quot; ordenados, o jogador só pode acabar a corrida na meta, etc.;
+            </li>
+            <li>Implementação de um salto controlado pelo jogador.</li>
           </ul>
         </p>
+
+        <p>
+          O início do desenvolvimento começou pelo fim da pista e pelas primeiras ideias que tive para este projeto.
+          Eu queria que a pista começasse de maneira simples, pelo que a divisão das faixas foi reservada para o fim da pista.
+          Para criar uma diferença de dificuldade entra as novas faixas, iriam-se usar faixas inclinadas,
+          no sentido de desequilibrar o controlo do jogador sobre o seu carro.
+        </p>
+
+        <p>
+          Começou-se por criar uma rampa que guiasse o jogador para a pista elevada, a qual seria mais curta, mas difícil.
+          Para tal, alargou-se a faixa original do &quot;GameKit&quot; de uma forma brusca e crude,
+          através do simples aumento da escala axial da faixa original.
+          Depois, adicionaram-se dois segmentos de rampas pré-fabricados, com um desvio de inclinação de 30&deg;
+          &mdash; especificamente, usou-se um segmento na entrada da rampa e outro na saída,
+          para manter o início da pista elevada nivelado.
+        </p>
+
+        <div class="image-row">
+          <img src="images/TP1-1-TrackDivision-1-OnRamp.png" title="Rampa de entrada na pista elevada">
+          <img src="images/TP1-1-TrackDivision-2-TiltedTracks.png" title="As faixas inclinadas da pista elevada">
+        </div>
+
+        <p>
+          Eventualmente, notei que as curvas podiam ser usadas para diminuir a largura das seguintes faixas da pista com um aspeto natural.
+          Aumentando ou diminuindo a escala de uma das dimensões da faixa curva,
+          a entrada/saída desta faixa pode ser redimensionada sem que a outra ponta da faixa sofra alterações.
+        </p>
+
+        <p>
+          A saída da pista elevada tirou partido da minha segunda ideia para este projeto: um precipício.
+          Em vez de criar uma outra rampa tão perto do final do circuito,
+          decidi que seria mais fácil e mais divertido ter um pequeno salto para se sair da pista elevada.
+          As faixas desta pista provaram-se difíceis de se apontar para a faixa no chão.
+          Para se contornar este problema de uma forma subtil,
+          usou-se o truque da alteração da escala axial de uma curva.
+        </p>
+
+        <div class="image-row">
+          <img src="images/TP1-1-TrackDivision-3-BackToNormalTracks.png" title="Nivelamento da pista elevada">
+          <img src="images/TP1-1-TrackDivision-4-OffJump.png" title="A saída (lê-se &quot;caída&quot;) da pista elevada para a pista no chão">
+        </div>
       </section>
     </main>
 

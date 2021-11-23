@@ -100,6 +100,13 @@ section ol li
 {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.image-row img
+{
+    max-width: 45%;
 }
 
 .footer_pusher
