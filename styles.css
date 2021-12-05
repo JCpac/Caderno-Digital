@@ -75,13 +75,18 @@ section p
     margin: 0.8em 0;
 }
 
+section div.img-single
+{
+    display: flex;
+    justify-content: center;
+}
+
 section img
 {
-    display: block;
-    max-height: 20em;
-    max-width: 80%;
-    margin: auto;
+    max-height: 25em;
+    max-width: 40em;
     border-radius: 10px;
+    box-shadow: 0 0 8px 2px black;
 }
 
 section ul,
@@ -99,8 +104,7 @@ section ol li
 .image-row
 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
