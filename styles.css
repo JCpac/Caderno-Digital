@@ -65,9 +65,30 @@ section
 
 section h2
 {
+    display: inline-block;
     font-size: 1.2em;
     color: var(--color-text-important);
     margin-bottom: 0.4em;
+    cursor: pointer;
+}
+
+section h2::before
+{
+    content: "\25BC";
+    display: inline-block;
+    transition-duration: 0.2s;
+}
+
+section h2.section-closed::before
+{
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition-duration: 0.2s;
+}
+
+section h2.section-closed ~ *
+{
+    display: none !important;
 }
 
 section p
