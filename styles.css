@@ -153,6 +153,7 @@ section ol li
 .image-row img
 {
     max-width: 45%;
+    margin: 0.5em 0;
 }
 
 .footer_pusher
