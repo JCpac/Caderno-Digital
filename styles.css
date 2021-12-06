@@ -2,6 +2,9 @@
 :root
 {
     --color-bg: rgb(50, 50, 50);
+    --color-section-header-bg: rgb(60, 60, 60);
+    --color-section-header-bg-hover: rgb(80, 80, 80);
+    --color-section-header-border: rgb(200, 200, 200);
     --color-text: rgb(240, 240, 240);
     --color-text-important: rgb(255, 130, 0);
     --color-footer-gradient-end: rgb(10, 10, 10);
@@ -63,13 +66,29 @@ section
     padding: 1em 0;
 }
 
+section > :last-child
+{
+    margin-bottom: 1em;
+}
+
 section h2
 {
-    display: inline-block;
     font-size: 1.2em;
     color: var(--color-text-important);
-    margin-bottom: 0.4em;
+    padding: 0.5em;
     cursor: pointer;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-section-header-bg);
+    border: solid 2px var(--color-section-header-border);
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+section h2:hover
+{
+    background-color: var(--color-section-header-bg-hover);
+    transition-duration: 0.2s;
 }
 
 section h2::before
@@ -81,6 +100,7 @@ section h2::before
 
 section h2.section-closed::before
 {
+    content: "\25BD";
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     transition-duration: 0.2s;
@@ -94,9 +114,10 @@ section h2.section-closed ~ *
 section p
 {
     margin: 0.8em 0;
+    padding: 0 1em;
 }
 
-section div.img-single
+.image-single
 {
     display: flex;
     justify-content: center;
@@ -113,7 +134,7 @@ section img
 section ul,
 section ol
 {
-    padding: 0 2em;
+    padding: 0 3em;
 }
 
 section ul li,
