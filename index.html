@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/unity.png"/>
 
     <script src="/app.js"></script>
 
@@ -121,7 +122,7 @@
         </p>
 
         <div class="image-single">
-          <img src="images/2dPlatformer-1.png" title="Criando um novo projeto com um &quot;template&quot; de &quot;2D platformer&quot;">
+          <img src="images/2D-Platformer/1.png" title="Criando um novo projeto com um &quot;template&quot; de &quot;2D platformer&quot;">
         </div>
 
         <p>
@@ -132,8 +133,8 @@
         </p>
 
         <div class="image-row">
-          <img src="images/2dPlatformer-2.png" title="O &quot;platformer&quot; 2D em ação">
-          <img src="images/2dPlatformer-3.png" title="A janela do Unity Editor com o projeto do &quot;platformer&quot; 2D aberto">
+          <img src="images/2D-Platformer/2.png" title="O &quot;platformer&quot; 2D em ação">
+          <img src="images/2D-Platformer/3.png" title="A janela do Unity Editor com o projeto do &quot;platformer&quot; 2D aberto">
         </div>
 
         <p>
@@ -146,8 +147,8 @@
         </p>
 
         <div class="image-row">
-          <img src="images/2dPlatformer-4.png" title="Tronco com componente &quot;Box Collider 2D&quot;">
-          <img src="images/2dPlatformer-5.png" title="Jogador em cima do tronco">
+          <img src="images/2D-Platformer/4.png" title="Tronco com componente &quot;Box Collider 2D&quot;">
+          <img src="images/2D-Platformer/5.png" title="Jogador em cima do tronco">
         </div>
         
 
@@ -171,7 +172,7 @@
         <p>
           Ideias iniciais para o Karting Microgame:
           <ul>
-            <li>Faixas de pista divididas, preferencialmente com diferentes graus de dificuldade;</li>
+            <li>Caminhos da pista divididos, preferencialmente com diferentes graus de dificuldade;</li>
             <li>Saltos com rampas/precipícios;</li>
             <li>Pontes;</li>
             <li>Loops;</li>
@@ -185,30 +186,25 @@
 
         <p>
           O início do desenvolvimento começou pelo fim da pista e pelas primeiras ideias que tive para este projeto.
-          Eu queria que a pista começasse de maneira simples, pelo que a divisão das faixas foi reservada para o fim da pista.
-          Para criar uma diferença de dificuldade entra as novas faixas, iriam-se usar faixas inclinadas,
-          no sentido de desequilibrar o controlo do jogador sobre o seu carro.
+          Eu queria que a pista começasse de maneira simples, pelo que a divisão dos caminhos foi reservada para o fim da pista.
+          Para criar uma diferença de dificuldade entra os novos caminhos, iriam-se usar segmentos de pista inclinados,
+          no sentido de desorientar o jogador ligeiramente.
         </p>
 
         <p>
-          Começou-se por criar uma rampa que guiasse o jogador para a pista elevada, a qual seria mais curta, mas difícil.
-          Para tal, alargou-se a faixa original do &quot;GameKit&quot; de uma forma brusca e crude,
-          através do simples aumento da escala axial da faixa original.
-          Depois, adicionaram-se dois segmentos de rampas pré-fabricados, com um desvio de inclinação de 30&deg;
-          &mdash; especificamente, usou-se um segmento na entrada da rampa e outro na saída,
-          para manter o início da pista elevada nivelado.
+          Começou-se por criar uma rampa que guiasse o jogador para o caminho elevado, o qual seria mais curto, mas difícil.
+          Para tal, alargaram-se os segmentos originais do &quot;GameKit&quot; de uma forma brusca e crude,
+          através do simples aumento das suas escalas axiais.
+          Depois, adicionaram-se uns segmentos de pista pré-fabricados, com inclinações de 30&deg;.
+          Para se voltar a nivelar a pista, usou-se um outro segmento inclinado no fim,
+          mas com a escala de um dos seus eixos invertida.
         </p>
 
         <div class="image-row">
-          <img src="images/TP1-1-TrackDivision-1-OnRamp.png" title="Rampa de entrada na pista elevada">
-          <img src="images/TP1-1-TrackDivision-2-TiltedTracks.png" title="As faixas inclinadas da pista elevada">
+          <img src="images/TP1/1-TopTrack-1-OnRamp.png" title="Rampa de entrada no caminho elevado">
+          <img src="images/TP1/1-TopTrack-2-TiltedTracks.png" title="As faixas inclinadas do caminho elevado">
+          <img src="images/TP1/1-TopTrack-3-BackToNormalTracks.png" title="Nivelamento do caminho elevado">
         </div>
-
-        <p>
-          Eventualmente, notei que as curvas podiam ser usadas para diminuir a largura das seguintes faixas da pista com um aspeto natural.
-          Aumentando ou diminuindo a escala de uma das dimensões da faixa curva,
-          a entrada/saída desta faixa pode ser redimensionada sem que a outra ponta da faixa sofra alterações.
-        </p>
 
         <p>
           A saída da pista elevada tirou partido da minha segunda ideia para este projeto: um precipício.
@@ -219,10 +215,100 @@
           usou-se o truque da alteração da escala axial de uma curva.
         </p>
 
-        <div class="image-row">
-          <img src="images/TP1-1-TrackDivision-3-BackToNormalTracks.png" title="Nivelamento da pista elevada">
-          <img src="images/TP1-1-TrackDivision-4-OffJump.png" title="A saída (lê-se &quot;caída&quot;) da pista elevada para a pista no chão">
+        <div class="image-single">
+          <img src="images/TP1/1-TopTrack-4-OffJump.png" title="A saída (lê-se &quot;caída&quot;) do caminho elevado para a pista no chão">
         </div>
+
+        <p>
+          Sendo que eu não gostei da maneira como tinha criado a divisão dos caminhos,
+          achei melhor resolver o aspeto desta parte.
+          No entanto, não conhecendo uma melhor forma de aumentar os segmentos de pista suavemente,
+          decidi seguir a minha segunda ideia:
+          criar um "prefab" de uma guarda que possa não só esconder o mau aspeto da faixa ao jogador,
+          como também impedir que este saia da pista pelos buracos.
+        </p>
+
+        <div class="image-row">
+          <img src="images/TP1/2-TrackDivisionGuards-1-Prefab.png" title="&quot;Prefab&quot; da guarda da pista">
+          <img src="images/TP1/2-TrackDivisionGuards-2-Result.png" title="Divisão dos caminhos com guardas">
+        </div>
+
+        <p>
+          Eventualmente, notei que as curvas podiam ser usadas
+          para alterar a largura dos seguintes segmentos da pista com uma transição natural.
+          Aumentando ou diminuindo a escala de uma das dimensões do segmento curvo,
+          a entrada/saída desta faixa pode ser redimensionada sem que a outra extremidade sofra alterações.
+          Com este conhecimento, decidi criar o início da pista com uma secção mais larga,
+          oferecendo mais espaço para o jogador poder usar grande risco de bater nos lados da pista.
+        </p>
+
+        <div class="image-row">
+          <img src="images/TP1/3-Start-1-LargerTracks.png" title="Oval no início da pista com segmentos alargados">
+          <img src="images/TP1/3-Start-2-IntoSpirals.png" title="Seguimento da pista oval para as espirais">
+          <img src="images/TP1/3-Start-3-AroundBuilding.png" title="Desvio da pista à volta de um edifício">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/4-Buildings-1-StartLine.png" title="Edifícios à beira da meta">
+          <img src="images/TP1/4-Buildings-2-OvalGoingUnder.png" title="Edifício por cima da pista oval">
+          <img src="images/TP1/4-Buildings-3-OneMoreWhyNot.png" title="Mais um; porque não? ¯\_(ツ)_/¯">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/5-BottomTrack-1-HillLoop.png" title="&quot;Loop&quot; à volta de um monte">
+          <img src="images/TP1/5-BottomTrack-2-SteepRampAndBank.png" title="Uma rampa íngreme e uma curva inclinada">
+          <img src="images/TP1/5-BottomTrack-3-Jump.png" title="Salto para a meta">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/6-ObstacleTowers-1-Prefab.png" title="&quot;Prefab&quot; das torres">
+          <img src="images/TP1/6-ObstacleTowers-2-UnderBuilding.png" title="Torres por baixo do edifício da pista oval">
+          <img src="images/TP1/6-ObstacleTowers-3-Spiral.png" title="Torres nas espirais">
+          <img src="images/TP1/6-ObstacleTowers-4-EndOfTopTracks.png" title="Último desafio do caminho superior antes da meta">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/6-ObstacleTowers-5-SpeedBump1.png" title="Lombada no início do caminho inferior">
+          <img src="images/TP1/6-ObstacleTowers-6-SpeedBump2.png" title="Lombada depois da curva inclinada">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/7-SpeedBoost-1-PrefabProperties.png" title="Propriedades do &quot;prefab&quot; para o impulso de velocidade">
+          <img src="images/TP1/7-SpeedBoost-2-BeforeFirstTowers.png" title="Impulso de velocidade antes das torres na pista oval">
+          <img src="images/TP1/7-SpeedBoost-3-InformativeSign.png" title="Cartaz informativo sobre os impulsos de velocidade">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/8-ObstacleBumps-1-Oval.png" title="Saliências na pista oval">
+          <img src="images/TP1/8-ObstacleBumps-2-BottomTrackEasy.png" title="Saliências fáceis no início do caminho inferior">
+          <img src="images/TP1/8-ObstacleBumps-3-BottomTrackHard.png" title="Saliências difíceis no caminho inferior, depois das fáceis">
+          <img src="images/TP1/8-ObstacleBumps-4-TrackDivider.png" title="Saliências na divisão dos caminhos">
+        </div>
+
+        <div class="image-single">
+          <img src="images/TP1/8-ObstacleBumps-5-OvalGuards.png" title="Guardas para as saliências da pista oval">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/9-TopTrackImproved-1-Start.png" title="Mais obstáculos no início do caminho superior">
+          <img src="images/TP1/9-TopTrackImproved-2-Building.png" title="Mais obstáculos a meio do caminho superior, com um novo edifício para segurar na torre">
+          <img src="images/TP1/9-TopTrackImproved-3-End.png" title="Saliências adicionadas ao fim do caminho superior">
+        </div>
+
+        <div class="image-row">
+          <img src="images/TP1/10-Decorations-1-TrackDividerAndJump.png" title="Cartaz a indicar a dificuldade do caminho superior e cartaz a indicar o salto do caminho inferior">
+          <img src="images/TP1/10-Decorations-2-YouCanDoIt.png" title="You can do it! &hearts;">
+          <img src="images/TP1/10-Decorations-3-WatchYourHead.png" title="Watch your head!">
+          <img src="images/TP1/10-Decorations-4-NiceJump.png" title="Não se queixem; eu estava aborrecido aqui... >:c">
+        </div>
+
+        <div class="image-single">
+          <img src="images/TP1/11-Final.png">
+        </div>
+
+        <p>
+          Double-sided shaders!
+        </p>
       </section>
     </main>
 
