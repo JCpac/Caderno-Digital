@@ -238,8 +238,15 @@
           para alterar a largura dos seguintes segmentos da pista com uma transição natural.
           Aumentando ou diminuindo a escala de uma das dimensões do segmento curvo,
           a entrada/saída desta faixa pode ser redimensionada sem que a outra extremidade sofra alterações.
-          Com este conhecimento, decidi criar o início da pista com uma secção mais larga,
+          Com este conhecimento, decidi criar o início da pista com uma secção oval com segmentos mais largos,
           oferecendo mais espaço para o jogador poder usar grande risco de bater nos lados da pista.
+        </p>
+
+        <p>
+          Depois da oval estar criada, adicionei uns segmentos turbulentos
+          e liguei a pista com as espirais que já existiam no nível do &quot;GameKit&quot;.
+          Entre as espirais, decidi tirar partido dos segmentos com desvio lateral,
+          os quais correm à volta de um edifício.
         </p>
 
         <div class="image-row">
@@ -248,17 +255,58 @@
           <img src="images/TP1/3-Start-3-AroundBuilding.png" title="Desvio da pista à volta de um edifício">
         </div>
 
+        <p>
+          Com a adição dos edifícios entre as espirais,
+          decidi colocar mais alguns no nível, como decoração.
+        </p>
+
         <div class="image-row">
           <img src="images/TP1/4-Buildings-1-StartLine.png" title="Edifícios à beira da meta">
           <img src="images/TP1/4-Buildings-2-OvalGoingUnder.png" title="Edifício por cima da pista oval">
           <img src="images/TP1/4-Buildings-3-OneMoreWhyNot.png" title="Mais um; porque não? ¯\_(ツ)_/¯">
         </div>
 
+        <p>
+          Após conectar as espirais com a divisão dos caminhos,
+          comecei a preencher o caminho inferior.
+          Esta parte da pista teria que ser mais longa que o caminho inferior, mas com uma menor dificuldade.
+        </p>
+
+        <p>
+          Comecei com uma volta a um monte.
+          Para evitar que esta pista comece demasiado fácil,
+          construí uma pista que subisse de nível em passos,
+          no sentido de forçar o jogador a regular a maneira como controla o carro ao longo da argola.
+          Após a volta ao monte, a pista continua para uma rampa íngreme que deverá reduzir a velocidade do jogador,
+          seguida de uma curva inclinada apertada.
+          Finalmente, o caminho inferior acaba com um salto por cima dos segmentos de pista entre a volta ao monte e a rampa íngreme.
+          Desta maneira, caso o jogador não consiga realizar o salto,
+          ele será forçado a subir a rampa, passar a curva inclinada e tentar o salto outra vez.
+        </p>
+
         <div class="image-row">
           <img src="images/TP1/5-BottomTrack-1-HillLoop.png" title="&quot;Loop&quot; à volta de um monte">
-          <img src="images/TP1/5-BottomTrack-2-SteepRampAndBank.png" title="Uma rampa íngreme e uma curva inclinada">
+          <img src="images/TP1/5-BottomTrack-2-SteepRampAndBank.png" title="Uma rampa íngreme e uma curva inclinada apertada">
           <img src="images/TP1/5-BottomTrack-3-Jump.png" title="Salto para a meta">
         </div>
+
+        <p>
+          Com a pista conectada do início ao fim,
+          decidi seguir um dos conselhos do professor de juntar obstáculos ao nível,
+          começando pela criação de um &quot;prefab&quot; para uma simples torre sinalizada em branco e vermelho.
+        </p>
+
+        <p>
+          Comecei, então, a espalhar estes obstáculos pela pista:
+          por baixo do edifício da pista oval,
+          no interior da curva à saída da oval,
+          entre as duas espirais
+          e no final do caminho superior, de forma a assegurar a sua dificuldade.
+          Note-se que, após encurtar o fim do caminho superior,
+          adicionei uma torre a funcionar como lombada.
+          Desta forma, o jogador deve manter uma velocidade decente e um bom ângulo de colisão
+          para conseguir saltar até à meta.
+        </p>
 
         <div class="image-row">
           <img src="images/TP1/6-ObstacleTowers-1-Prefab.png" title="&quot;Prefab&quot; das torres">
@@ -267,16 +315,55 @@
           <img src="images/TP1/6-ObstacleTowers-4-EndOfTopTracks.png" title="Último desafio do caminho superior antes da meta">
         </div>
 
+        <p>
+          Também me lembrei de usar as torres como lombadas em algumas partes do caminho inferior.
+        </p>
+
         <div class="image-row">
           <img src="images/TP1/6-ObstacleTowers-5-SpeedBump1.png" title="Lombada no início do caminho inferior">
           <img src="images/TP1/6-ObstacleTowers-6-SpeedBump2.png" title="Lombada depois da curva inclinada">
         </div>
+
+        <p>
+          Por diversão, decidi criar um &quot;power-up&quot; que aumentasse a velocidade do carro.
+          Comecei por alterar um &quot;prefab&quot; existente de uma esfera.
+          Adicionei o componente &quot;ArcadeKartPowerup.cs&quot; ao &quot;prefab&quot;
+          e aumentei os valores de aceleração e da velocidade máxima do carro.
+          Para que o &quot;script&quot; funcionasse,
+          ativou-se a opção &quot;Is Trigger&quot; do seu componente &quot;Sphere Collider&quot;.
+        </p>
+
+        <p>
+          Decidi colocar o impulso de velocidade na pista oval, antes das torres.
+          Isto iria dar ao jogador uma decisão a tomar:
+          apanhar o &quot;power-up&quot; para aumentar a sua velocidade
+          &mdash; arriscando-se a colidir com as torres &mdash;
+          ou evitar o &quot;power-up&quot; para ter mais controlo sobre o carro
+          &mdash; gastando mais tempo na pista oval.
+        </p>
+
+        <p>
+          Como o &quot;power-up&quot; era uma simples esfera colorida,
+          não seria óbvio para o jogador que isto era um impulso de velocidade.
+          Para resolver esse problema, criei um &quot;prefab&quot; de um cartaz,
+          onde estaria indicado o uso destas esferas.
+        </p>
 
         <div class="image-row">
           <img src="images/TP1/7-SpeedBoost-1-PrefabProperties.png" title="Propriedades do &quot;prefab&quot; para o impulso de velocidade">
           <img src="images/TP1/7-SpeedBoost-2-BeforeFirstTowers.png" title="Impulso de velocidade antes das torres na pista oval">
           <img src="images/TP1/7-SpeedBoost-3-InformativeSign.png" title="Cartaz informativo sobre os impulsos de velocidade">
         </div>
+
+        <p>
+          Após alguns testes na pista,
+          apercebi-me que a pista oval talvez seja um bocado fácil demais.
+          Eu precisava de algo que aumentasse ligeiramente a sua dificuldade,
+          pelo menos para a segunda metade da oval.
+          Para tal, criei uns &quot;prefabs&quot; de saliências que eram, essencialmente, esferas achatadas.
+          Especificamente, criei duas: uma (amarela) mais achatada que a outra (vermelha),
+          para que tenham graus de perigo diferentes.
+        </p>
 
         <div class="image-row">
           <img src="images/TP1/8-ObstacleBumps-1-Oval.png" title="Saliências na pista oval">
@@ -285,15 +372,36 @@
           <img src="images/TP1/8-ObstacleBumps-4-TrackDivider.png" title="Saliências na divisão dos caminhos">
         </div>
 
+        <p>
+          Depois de mais testes à pista,
+          era óbvio que as saliências na pista oval eram demasiado difíceis para o início da pista,
+          pois, juntamente com o impulso de velocidade, elas eram capazes de mandar o carro para fora da pista.
+          Então, adicionei umas guardas laterais, para tentar impedir que o jogador possa perder a corrida nesta secção.
+        </p>
+
         <div class="image-single">
           <img src="images/TP1/8-ObstacleBumps-5-OvalGuards.png" title="Guardas para as saliências da pista oval">
         </div>
+
+        <p>
+          Com novos obstáculos no projeto, decidi que era uma boa altura para terminar o caminho superior com a adição de mais obstáculos.
+          Também optei por adicionar um impulso de velocidade no início,
+          o qual é praticamente obrigatório de se usar, pois encontra-se entre duas torres.
+          O aumento de velocidade serve para diminuir o controlo sobre o carro.
+          Com esta combinação de obstáculos e &quot;power-up&quot;,
+          o caminho superior era agora capaz de ser tanto o circuito mais rápido,
+          como o que oferece mais colisões antes da meta.
+        </p>
 
         <div class="image-row">
           <img src="images/TP1/9-TopTrackImproved-1-Start.png" title="Mais obstáculos no início do caminho superior">
           <img src="images/TP1/9-TopTrackImproved-2-Building.png" title="Mais obstáculos a meio do caminho superior, com um novo edifício para segurar na torre">
           <img src="images/TP1/9-TopTrackImproved-3-End.png" title="Saliências adicionadas ao fim do caminho superior">
         </div>
+
+        <p>
+          Para finalizar o nível, criei mais alguns cartazes para o decorar.
+        </p>
 
         <div class="image-row">
           <img src="images/TP1/10-Decorations-1-TrackDividerAndJump.png" title="Cartaz a indicar a dificuldade do caminho superior e cartaz a indicar o salto do caminho inferior">
@@ -302,13 +410,13 @@
           <img src="images/TP1/10-Decorations-4-NiceJump.png" title="Não se queixem; eu estava aborrecido aqui... >:c">
         </div>
 
+        <p>
+          Com o projeto concluído, termino este relatório com um mapa do nível final.
+        </p>
+
         <div class="image-single">
           <img src="images/TP1/11-Final.png">
         </div>
-
-        <p>
-          Double-sided shaders!
-        </p>
       </section>
     </main>
 
