@@ -111,6 +111,13 @@ section h2.section-closed ~ *
     display: none !important;
 }
 
+section h3
+{
+    font-size: 1.2em;
+    color: var(--color-text-important);
+    padding: 0.5em 0 0.2em;
+}
+
 section p
 {
     margin: 0.8em 0;
