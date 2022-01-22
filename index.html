@@ -567,6 +567,7 @@
         </p>
 
         <h3>Física Do Jogador</h3>
+        <h4>Script Inicial</h4>
         <p>
           Antes de ter começado este projeto,
           eu tinha testado o Godot ao criar alguns projetos mais pequenos.
@@ -589,6 +590,50 @@
           O <code>state</code> do jogador também facilita a futura expansão das habilidades do jogador,
           pois novas mecânicas que alteram a sua física podem ser implementadas
           e encapsuladas dentro de um novo estado.
+        </p>
+
+        <h4>Wall-Sliding</h4>
+        <p>
+          Após o Filipe ter criado uma grande parte do nível,
+          adicionou-se a cena do jogador ao nível,
+          juntamente com um nodo <code>Camera2D</code> dentro do nodo do jogador.
+          Pela razão que o jogador era o nodo parental da câmara,
+          esta era capaz de o seguir automaticamente,
+          criando-se uma "<i>player camera</i>" com pouco esforço.
+          Com estas adições, possibilitou-se a testagem do jogador dentro do nível.
+        </p>
+        <p>
+          Como a física do jogador estava em boas condições,
+          pensou-se em adicionar uma nova mecânica: saltos em paredes.
+          No entanto, esta habilidade seria difícil de usar com a aceleração gravitacional atual,
+          mas, também, não queríamos diminui-la.
+          Como tal, optou-se por criar a mecânica de deslizar em paredes,
+          a qual iria diminuir a velocidade vertical do jogador
+          quando ele estivesse em contacto com uma parede.
+        </p>
+        <p>
+          Para se realizar a deteção de paredes nas laterais do jogador,
+          criou-se uma cena denominada "WallSlidingDetectors",
+          na qual foram criados os nodos <code>Area2D</code> que serviriam de caixas de colisão.
+          Esta cena foi, de seguida, instanciada na cena do jogador.
+          Inicialmente, foram criados apenas dois dos nodos <code>Area2D</code>:
+          um em cima e um em baixo do jogador.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/1-PlayerPhysics-1-WallSlidingDetectors.png" title="Jogador (ainda sem sprite; retângulo branco) com os &quot;WallSlidingDetectors&quot; visíveis (caixas azuis)">
+        </div>
+        <p>
+          A razão pela existência de detetores em alturas separadas
+          era a prevenção do <i>wall-sliding</i> apenas com a cabeça ou apenas com os pés do jogador,
+          o que não faria muito sentido.
+          Desta forma, ambos os detetores devem colidir com uma parede
+          para o jogador conseguir deslizar nela.
+        </p>
+        <p>
+          O próximo passo foi a implementação das novas mecânicas de física no jogador,
+          as quais foram restringidas ao novo estado <code>WALL_SLIDING</code>.
+          Isto incluiu a adição de alguns valores contantes
+          que definiam a aceleração e a velocidade máxima para se deslizar em paredes.
         </p>
       </section>
     </main>
