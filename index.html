@@ -516,10 +516,35 @@
           Ainda no assunto de recursos externos,
           convém mencionar-se o website "jsfxr" [<a href="https://sfxr.me/">https://sfxr.me/</a>],
           o qual foi usado para se criar os efeitos sonoros do salto do jogador e do texto do Dialogue Box.
-          Para além desses recursos, inclui-se as "sprites" do jogador,
+          Para além desses recursos, inclui-se as <i>sprites</i> do jogador,
           criadas pelo Filipe,
-          e as "sprites" das cordas decorativas,
+          e as <i>sprites</i> das cordas decorativas,
           criadas por mim.
+        </p>
+
+        <h3>Física Do Jogador</h3>
+        <p>
+          Antes de ter começado este projeto,
+          eu tinha testado o Godot ao criar alguns projetos mais pequenos.
+          Um deles envolvia um jogador com as capacidades para andar,
+          para saltar e para cair devido à força da gravidade.
+        </p>
+        <p>
+          O script usado nesse projeto possibilitava o movimento do jogador por aceleração,
+          em vez de simplesmente se definir a velocidade imediatamente.
+          Isto incluía a aceleração por fricção,
+          para que o jogador tivesse alguma inércia.
+          A velocidade do jogador é aumentada a cada <i>frame</i>,
+          sendo, também, restringida a uma velocidade máxima pré-definida
+          antes de ser aplicada ao jogador.
+        </p>
+        <p>
+          A condição para o jogador poder saltar é o seu <code>state</code> (estado),
+          o qual pode ser um de <code>WALKING</code> (jogador está em contacto com o chão)
+          ou <code>FALLING</code> (jogador está no ar).
+          O <code>state</code> do jogador também facilita a futura expansão das habilidades do jogador,
+          pois novas mecânicas que alteram a sua física podem ser implementadas
+          e encapsuladas dentro de um novo estado.
         </p>
       </section>
     </main>

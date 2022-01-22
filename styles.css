@@ -144,6 +144,14 @@ section p
     padding: 0 1em;
 }
 
+section p code
+{
+    font-family: monospace;
+    background-color: var(--color-section-header-bg-hover);
+    padding: 0 0.3em;
+    border-radius: 0.3em;
+}
+
 .image-single
 {
     display: flex;
