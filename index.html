@@ -522,6 +522,48 @@
           e as <i>sprites</i> das cordas decorativas,
           criadas por mim no <a href="https://graphicsgale.com/us/">GraphicsGale</a>.
         </p>
+
+        <h3>Básicos do Godot</h3>
+        <p>
+          Antes de relatar o desenvolvimento do projeto,
+          convém explicar alguns dos conceitos fundamentais do Godot.
+          Toda a informação usada neste caderno
+          pode ser encontrada com mais detalhes na
+          <a href="https://docs.godotengine.org/en/stable/index.html">
+            documentação <i>online</i> do Godot.
+          </a>
+        </p>
+        <p>
+          Este motor de jogos baseia-se em nodos &mdash;
+          objetos com determinadas propriedades e comportamentos
+          que podem ser herdados de outros nodos.
+          Nesse aspeto, os nodos são imensamente semelhantes
+          a objetos de linguagens de programação orientadas a objetos.
+          O Godot já inclui um conjunto de nodos úteis pré-fabricados,
+          tanto para 2D, como para 3D,
+          para facilitar a criação de novos jogos.
+        </p>
+        <p>
+          Para se criar e correr um jogo,
+          devem-se criar cenas,
+          as quais são um agrupamento de nodos em forma de árvore, ou seja,
+          os nodos podem ter vários nodos-filhos,
+          sendo que a cena tem sempre 1 nodo de raiz.
+          Dentro de uma cena, pode-se adicionar os nodos pretendidos,
+          ou, até mesmo, instanciar outras cenas como um único nodo.
+          A maior parte dos comportamentos ditados a nodos de uma cena
+          é igualmente aplicado aos nodos-filhos,
+          tornando o desenvolvimento de jogos mais intuitivo.
+        </p>
+        <p>
+          O Godot permite o uso oficial de várias linguagens de programação,
+          incluindo C#, VisualScript, C++, C e GDScript,
+          sendo esta última a linguagem baseada em Python criada para o Godot.
+          Para além destas, também existem outras linguagens suportadas pela comunidade,
+          incluindo D, Kotlin, Nim, Python e Rust.
+          Optou-se por usar o GDScript,
+          pois a documentação do Godot apresenta exemplos de código nesta linguagem
+          e porque queríamos experimentá-la.
         </p>
 
         <h3>Física Do Jogador</h3>
