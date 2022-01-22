@@ -133,6 +133,11 @@ section h4
     font-size: 1.1em;
 }
 
+section a
+{
+    color: var(--color-text-important);
+}
+
 section p
 {
     margin: 0.8em 0;
