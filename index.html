@@ -575,7 +575,7 @@
           para saltar e para cair devido à força da gravidade.
         </p>
         <p>
-          O script usado nesse projeto possibilitava o movimento do jogador por aceleração,
+          O <i>script</i> usado nesse projeto possibilitava o movimento do jogador por aceleração,
           em vez de simplesmente se definir a velocidade imediatamente.
           Isto incluía a aceleração por fricção,
           para que o jogador tivesse alguma inércia.
@@ -620,7 +620,7 @@
           um em cima e um em baixo do jogador.
         </p>
         <div class="image-single">
-          <img src="images/TP2/1-PlayerPhysics-1-WallSlidingDetectors.png" title="Jogador (ainda sem sprite; retângulo branco) com os &quot;WallSlidingDetectors&quot; visíveis (caixas azuis)">
+          <img src="images/TP2/1-PlayerPhysics-1-WallSlidingDetectors.png" title="Jogador (ainda sem sprite; retângulo branco) com o &quot;WallSlidingDetectors&quot; visíveis (2 caixas azuis)">
         </div>
         <p>
           A razão pela existência de detetores em alturas separadas
@@ -634,6 +634,55 @@
           as quais foram restringidas ao novo estado <code>WALL_SLIDING</code>.
           Isto incluiu a adição de alguns valores contantes
           que definiam a aceleração e a velocidade máxima para se deslizar em paredes.
+        </p>
+
+        <h4>Wall-Jumping</h4>
+        <p>
+          Com o <i>wall-sliding</i> implementado,
+          podia-se começar a desenvolver o salto em parede.
+          Para esta mecânica,
+          seria necessário saber de que lado do jogador está a parede
+          onde ele está a deslizar.
+          Portanto, os <code>Area2D</code> do “WallSlidingDetectors” foram separadas em 4
+          e criou-se um método que devolvesse o lado do jogador em colisão com uma parede.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/1-PlayerPhysics-2-WallSlidingDetectors.png" title="Jogador (retângulo branco) com o &quot;WallSlidingDetectors&quot; visíveis (4 caixas azuis)">
+        </div>
+        <p>
+          Seguidamente, implementou-se uma variação do salto normal
+          no <i>script</i> do jogador.
+          Este novo salto seria ativado durante um <i>wall-slide</i>
+          e aplicava velocidade horizontal ao jogador na direção oposta da parede.
+        </p>
+        <p>
+          Também foi neste ponto que se detetou um problema:
+          ao saltar-se de uma parede, o jogador, por vezes,
+          não adquiria a devida velocidade horizontal.
+          Isto devia-se ao facto que, na <i>frame</i> do salto,
+          ele é movimentado na direção oposta da parede,
+          mas, nas <i>frames</i> seguintes,
+          se os <code>Area2D</code> do “WallSlidingDetectors”
+          ainda estivessem em contacto com uma parede,
+          o jogador iniciava um <i>wall-slide</i> outra vez,
+          anulando a sua velocidade horizontal.
+          Este problema foi resolvido com um temporizador implementado no <i>script</i> do jogador,
+          o qual impede <i>wall-sliding</i> imediatamente após um <i>wall-jump</i>.
+        </p>
+        <p>
+          Para além disto, aproveitou-se a criação do temporizador
+          para se impedir a aplicação de fricção aérea após um <i>wall-jump</i>.
+          Isto serviria para que o jogador não perdesse a sua inércia tão cedo,
+          o que iria limitar a sua capacidade de encadear múltiplos <i>wall-jumps</i>.
+        </p>
+        <p>
+          Eventualmente, alterou-se o <i>script</i>
+          para que um <i>wall-slide</i> efetuado ainda com velocidade direcionada para cima
+          usasse a aceleração normal da gravidade,
+          em vez da aceleração de um <i>wall-slide</i>.
+          Isto impedia que o jogador
+          alcançasse uma altura maior ao saltar contra uma parede
+          do que com um salto normal.
         </p>
       </section>
     </main>
