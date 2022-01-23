@@ -787,8 +787,8 @@
         <h4>Cartaz de Início</h4>
         <p>
           O cartaz no início do nível tem duas funções:
-          começar o temporizador do nível
-          quando o jogador o atravessar ao entrar na caverna
+          começar o temporizador do nível,
+          quando o jogador o atravessar ao entrar na caverna,
           e apresentar uma caixa de diálogo com informações sobre o jogo.
         </p>
         <p>
@@ -815,6 +815,23 @@
           <img src="images/TP2/Signs-2-StartSignScene.png" title="Cartaz de início com indicação de controlo">
           <img src="images/TP2/Signs-3-StartSignDialogueBox.png" title="Cartaz de início com o Dialogue Box aberto">
         </div>
+
+        <h4>Cartaz de Fim</h4>
+        <p>
+          O cartaz no final do nível tem duas funções:
+          parar o temporizador do nível,
+          quando o jogador o alcançar ao sair na caverna,
+          e apresentar um menu de fim de nível.
+          Este último seria criado mais tarde,
+          após a criação do menu do ecrã inicial.
+        </p>
+        <p>
+          Criou-se a cena do cartaz de fim,
+          incluindo o sinal seu <code>playerReached</code>,
+          o qual indica ao nível para desativar o temporizador.
+          Eventualmente, este sinal também seria usado
+          para o nível apresentar o referido menu de fim de nível.
+        </p>
 
         <h3>Interfaces do Nível</h3>
         <h4>Interface do Temporizador</h4>
