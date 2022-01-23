@@ -861,6 +861,52 @@
           <img src="images/TP2/Bridges-2-End.png" title="Ponte intacta no fim do nível">
         </div>
 
+        <h4>Menu do Início do Jogo e Ecrã Inicial</h4>
+        <p>
+          Comecei por se criar a cena com a interface do menu inicial,
+          a qual incluía dois botões:
+          um para começar o jogo
+          e outro para fechar a aplicação.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/StartScreen-1-StartScreenUI.png" title="Menu de início do jogo">
+        </div>
+        <p>
+          Para o ecrã inicial,
+          copiou-se o final do nível para uma nova cena.
+          Logo de seguida, adicionou-se um nodo <code>AnimatedSprite</code>,
+          para se adicionar o jogador à cena
+          e para facilitar a criação da animação do jogador a sair da caverna.
+        </p>
+        <p>
+          A animação em si seria criada com um nodo <code>AnimationPlayer</code>,
+          a qual permite o registo dos valores de propriedades específicas
+          a certos momentos de uma animação.
+          A animação consistia da câmara a subir o nível
+          até chegar à saída da caverna.
+          Ainda antes da câmara parar,
+          via-se o jogador a sair da caverna
+          e a parar imediatamente antes da ponte.
+          Passado um segundo, o jogador começa a sua animação "idle",
+          a qual o apresenta a tocar o seu instrumento.
+          Finalmente, o menu é revelado com uma animação
+          aplicada à sua opacidade,
+          ativando os botões no fim desta animação.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/StartScreen-2-StartScreen.png" title="Ecrã inicial, após a animação e com o menu apresentado">
+        </div>
+        <p>
+          Depois do design e da animação do ecrã inicial estarem completos,
+          tornou-se esta cena na cena principal do jogo,
+          isto é, a cena que o executável futuramente exportado iria abrir,
+          e criou-se um <i>script</i> que controlasse a lógica dos botões,
+          incluindo o foco automático dos botões
+          para habilitar a navegação por teclado.
+          Também foi adicionada uma música,
+          a qual inicia com a cena.
+        </p>
+
         <h3>Interfaces do Nível</h3>
         <h4>Interface do Temporizador</h4>
         <p>
