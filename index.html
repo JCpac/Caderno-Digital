@@ -726,6 +726,52 @@
           aumentava à medida que o jogador se aproximava da sua velocidade máxima.
         </p>
 
+        <h3>Cerejas Colecionáveis</h3>
+        <p>
+          Como um objetivo secundário do jogo,
+          queríamos ter cerejas que pudessem ser colecionadas pelo jogador,
+          à medida que ele explorava o nível.
+          O Filipe já tinha adicionado um nodo <code>TileMap</code>
+          que continha as <i>sprites</i> das cerejas espalhadas pelo nível.
+          No entanto, aquando de uma colisão com o jogador,
+          estes nodos não têm uma maneira fácil
+          de se determinar qual a telha que colidiu com o jogador.
+          Por essa razão, optei por se substituir as telhas das cerejas
+          por entidades cujas colisões individuais
+          contra o jogador focem facilmente detetadas e identificadas.
+        </p>
+        <p>
+          Para se solucionar o problema,
+          comecei por criar a cena de uma cereja.
+          Esta cena teria um nodo <code>Area2D</code> com uma máscara de colisão
+          que possibilitava colisões apenas com o jogador.
+          Aquando de se detetar uma colisão,
+          a cereja emitia o sinal <code>collected</code>
+          ("sinais" são os "eventos" do Godot),
+          o qual indicaria ao <i>script</i> do nível para aumentar a pontuação.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/Cherry-1-CherryScene.png" title="Cereja com área de colisão visível (caixa azul)">
+        </div>
+        <p>
+          O próximo passo foi a criação do método no <i>script</i> do nível
+          que substitui todas as telhas das cerejas
+          por instâncias da cena criada anteriormente.
+          Para além disso, esta função também era responsável por
+          criar as ligações dos sinais <code>collected</code> das instâncias das cerejas
+          com o método que incrementa a pontuação do jogador
+          e por contar o número de telhas substituídas,
+          para que se definisse a pontuação máxima.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/Cherry-2-CherrySetupMethod.png" title="Processo de inicialização das cerejas colecionáveis">
+        </div>
+        <p>
+          Finalmente, adicionou-se um efeito sonoro aquando da coleção de uma cereja,
+          assim como a animação das suas <i>sprites</i>,
+          de forma a que elas ficassem a "flutuar" acima do chão.
+        </p>
+
         <h3>Interfaces do Nível</h3>
         <h4>Interface do Temporizador</h4>
         <p>
