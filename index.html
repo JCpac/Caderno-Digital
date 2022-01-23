@@ -726,6 +726,29 @@
           aumentava à medida que o jogador se aproximava da sua velocidade máxima.
         </p>
 
+        <h3>Interface do Nível</h3>
+        <h4>Interface do Temporizador</h4>
+        <p>
+          A interface do temporizador consistia apenas de um nodo <code>Label</code>,
+          o qual apresentava uma <i>string</i> formatada em minutos e segundos,
+          e um nodo <code>Timer</code>,
+          o qual era responsável por, inicialmente,
+          medir 5 minutos.
+        </p>
+        <div class="image-row">
+          <img src="images/TP2/LevelInterfaces-1-TimerUI.png" title="Hierarquia da interface do temporizador do nível">
+          <img src="images/TP2/LevelInterfaces-2-TimerUI.png" title="Interface do temporizador do nível">
+        </div>
+        <p>
+          Após a criação da interface e a adição da sua cena dentro do nível,
+          passou-se o controlo sobre a ativação do temporizador
+          e do seu tempo medido ao <i>script</i> do nível,
+          o qual, inicialmente, o ativava desde o seu início.
+          Eventualmente, depois de se criar o "StartSign",
+          a ativação do temporizador era feita
+          quando o jogador atravessava esta cena no nível.
+        </p>
+
         <h3>Funcionalidades Extra</h3>
         <h4>Mover a Sprite do Céu com o Jogador/Ecrã</h4>
         <p>
