@@ -685,6 +685,31 @@
           do que com um salto normal.
         </p>
 
+        <h4>Melhorias no Wall-Sliding e no Wall-Jumping</h4>
+        <p>
+          O temporizador implementado anteriormente
+          impedia cadeias de <i>wall-jumps</i> em paredes muito próximas,
+          pois o jogador colidia com a parede oposta antes do tempo acabar.
+          Visto que a fricção devia ser impedida pelo intervalo de tempo já definido,
+          a redução do tempo no temporizador não era a solução.
+        </p>
+        <p>
+          Em vez disso, criou-se uma variável e um método
+          no <i>script</i> do jogador
+          que indicasse se o "WallSlidingDetectors" ainda estava a colidir com uma parede
+          e, se estivesse, não permitia que o jogador deslizasse em paredes.
+          Esta solução funcionava,
+          pois a distância entre os nodos <code>Area2D</code> de cada lado do jogador
+          era menor que a distância entre as paredes mais próximas do nível,
+          pelo que, numa cadeia de <i>wall-jumps</i>,
+          o "WallSlidingDetectors" iria deixar de detetar as paredes anteriores
+          antes de colidir com as seguintes.
+        </p>
+        <p>
+          Agora, o temporizador do <i>script</i> era usado unicamente
+          para impedir a fricção aérea do jogador logo a seguir a um <i>wall-jump</i>.
+        </p>
+
         <h3>Animações do Jogador</h3>
         <p>
           A certo ponto, o Filipe tinha criado as <i>sprites</i> do jogador.
