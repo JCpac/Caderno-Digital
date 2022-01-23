@@ -556,6 +556,22 @@
           tornando o desenvolvimento de jogos mais intuitivo.
         </p>
         <p>
+          Uma outra funcionalidade bastante útil do Godot são os sinais,
+          os quais funcionam como os <i>events</i> ou <i>observables</i> deste motor.
+          A maior vantagem dos sinais são a sua facilidade de uso.
+          Os sinais do Godot podem ser ligados a métodos de <i>scripts</i>
+          de duas maneiras: pelo editor e programaticamente.
+          Com o editor, é tão simples como ligar um sinal à devida função.
+          Por código, é, também, bastante fácil,
+          tirando partido do método
+          <code>connect("<i>sinal</i>", <i>nodo-alvo</i>, "<i>método-alvo</i>")</code>.
+          Para se emitirem sinais,
+          basta criar-se o sinal com a sintaxe <code>signal <i>sinal</i></code>
+          e usar-se o método <code>emit_signal("<i>sinal</i>")</code>,
+          o qual permite a emissão de qualquer sinal do nodo,
+          incluindo sinais herdados de outros nodos.
+        </p>
+        <p>
           O Godot permite o uso oficial de várias linguagens de programação,
           incluindo C#, VisualScript, C++, C e GDScript,
           sendo esta última a linguagem baseada em Python criada para o Godot.
