@@ -1002,7 +1002,68 @@
           apresentadas pela interface no <i>script</i> do nível.
         </p>
 
-        <h3>Funcionalidades Extra</h3>
+        <h3>Finalização</h3>
+        <p>
+          Com o jogo praticamente feito,
+          passou-se à fase de <i>bug-fixing</i> e configurações finais.
+          De todas as alterações feitas, destacam-se as seguintes.
+        </p>
+
+        <h4>Problema do Wall-Sliding entre TileMaps Diferentes</h4>
+          <p>
+            Este problema consistia do facto que
+            o estado de <i>wall-sliding</i> não era mantido
+            quando o jogador deslizava das telhas num <code>TileMap</code>
+            para telhas noutro <code>TileMap</code>.
+            Para se resolver este problema,
+            teve que se refazer a lógica do "WallSlidingDetectors".
+          </p>
+          <p>
+            Dantes, esta cena simplesmente lembrava-se
+            se estava em colisão com uma parede ou não,
+            independentemente de qual fosse a parede,
+            sendo que a colisão já não era detetada
+            quando a parede saísse dos nodos <code>Area2D</code>.
+            Por essa razão,
+            quando o jogador desliza entre <code>TileMap</code>s diferentes,
+            o "WallSlidingDetectors" registava, primeiro,
+            que a nova parede entrou em colisão
+            (não muda o estado interno, pois já estava em colisão)
+            e, depois, regista que a parede anterior deixou de estar em colisão
+            (muda o seu estado interno e deixa de deslizar por algumas <i>frames</i>).
+          </p>
+          <p>
+            A solução envolveu a acumulação num <i>array</i>
+            dos nodos das paredes com as quais o jogador colide
+            e a remoção destes mesmos nodos quando saíssem dos <code>Area2D</code>.
+            Desta forma, o "WallSlidingDetectors" podia lembrar-se
+            de múltiplas colisões.
+          </p>
+
+        <h4>Problema do Jogador Aparecer em frente às Passagens Escondidas</h4>
+        <p>
+          Este problema consistia do facto que
+          o jogador era apresentado à frente das paredes e chãos falsos.
+          Primeiramente, tentou-se simplesmente reordenar os nodos
+          na hierarquia da cena do nível.
+          No entanto, as telhas em questão encontravam-se
+          no mesmo nodo <code>TileMap</code> que outras telhas normais,
+          pelo que estas últimas também ficariam erradamente à frente do jogador.
+        </p>
+        <p>
+          A solução final envolveu a relocação das paredes e chãos falsos
+          para um nodo <code>TileMap</code> dedicado,
+          o qual foi colocado à frente do jogador.
+          Depois disto, apercebemo-nos que
+          os nodos <code>Node2D</code>,
+          assim como os nodos que herdam destes,
+          possuíam uma propriedade <code>z_index</code>,
+          a qual também solucionava o problema,
+          mas sem ter que se reordenar os nodos na hierarquia da cena.
+          Com isto, aproveitou-se para também se alterar o <code>z_index</code>
+          dos outros nodos visíveis no nível.
+        </p>
+
         <h4>Mover a Sprite do Céu com o Jogador/Ecrã</h4>
         <p>
           O fundo do nível consistia de uma <i>sprite</i> de um céu.
@@ -1055,6 +1116,34 @@
         <div class="image-single">
           <img src="images/TP2/ExtraFeatures-3-SkyInParallax.png" title="Processo que redimensiona a sprite do céu, baseando-se no zoom do nodo Camera2D">
         </div>
+
+        <h4>Configurações e Funcionalidades Extra</h4>
+        <ul>
+          <li>
+            Adição do título do jogo como o nome da aplicação;
+          </li>
+          <li>
+            Aumentou-se o temporizador para os 20 minutos pretendidos para o nível;
+          </li>
+          <li>
+            Criou-se e adicionaram-se ao nível umas <i>sprites</i> de cordas penduradas;
+          </li>
+          <li>
+            Ajustou-se as acelerações e velocidades máximas do jogador;
+          </li>
+          <li>
+            Criou-se <i>sprites</i> de nuvens de pó que aparecem quando o jogador desliza em paredes;
+          </li>
+          <li>
+            O temporizador que impede a fricção aérea do jogador após um <i>wall-jump</i>
+            foi transferido do <i>script</i> do nível para um nodo <code>Timer</code>,
+            para facilitar a sua edição e simplificar o código do nível;
+          </li>
+          <li>
+            Preencheu-se o fundo do nível com mais telhas,
+            para impedir que se veja o céu por baixo da montanha.
+          </li>
+        </ul>
       </section>
     </main>
 
