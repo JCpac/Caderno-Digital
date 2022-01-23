@@ -76,6 +76,7 @@ section h3,
 section h4
 {
     color: var(--color-text-important);
+    text-transform: capitalize;
 }
 
 section h3,

@@ -643,7 +643,7 @@
           Para esta mecânica,
           seria necessário saber de que lado do jogador está a parede
           onde ele está a deslizar.
-          Portanto, os <code>Area2D</code> do “WallSlidingDetectors” foram separadas em 4
+          Portanto, os <code>Area2D</code> do "WallSlidingDetectors" foram separadas em 4
           e criou-se um método que devolvesse o lado do jogador em colisão com uma parede.
         </p>
         <div class="image-single">
@@ -662,7 +662,7 @@
           Isto devia-se ao facto que, na <i>frame</i> do salto,
           ele é movimentado na direção oposta da parede,
           mas, nas <i>frames</i> seguintes,
-          se os <code>Area2D</code> do “WallSlidingDetectors”
+          se os <code>Area2D</code> do "WallSlidingDetectors"
           ainda estivessem em contacto com uma parede,
           o jogador iniciava um <i>wall-slide</i> outra vez,
           anulando a sua velocidade horizontal.
@@ -684,6 +684,60 @@
           alcançasse uma altura maior ao saltar contra uma parede
           do que com um salto normal.
         </p>
+
+        <h3>Funcionalidades Extra</h3>
+        <h4>Mover a Sprite do Céu com o Jogador/Ecrã</h4>
+        <p>
+          O fundo do nível consistia de uma <i>sprite</i> de um céu.
+          Por vezes, o fundo da caverna do nível tinha aberturas decorativas,
+          através das quais era suposto ver-se o céu.
+          Por essa razão, o Filipe teve que
+          colocar várias instâncias da <i>sprite</i> do céu ao longo do nível.
+        </p>
+        <p>
+          Para impedir mais casos desse trabalho fatigante,
+          queria-se associar o fundo do nível à posição do jogador
+          ou fixá-lo ao ecrã.
+          Primeiro, pensou-se em simplesmente atualizar as coordenadas da <i>sprite</i>
+          com as do jogador no <i>script</i> do nível.
+          No entanto, eu achava que o Godot tinha nodos pré-fabricados
+          que pudessem solucionar este problema.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/ExtraFeatures-1-SkyLockedToPlayerCamera.png" title="Processo que reposicionava a sprite do céu com a câmara do jogador">
+        </div>
+        <p>
+          Eventualmente, após alguma pesquisa,
+          deparei-me com os nodos <code>ParallaxBackground</code> e <code>ParallaxLayer</code>,
+          os quais permitiam a criação de múltiplos fundos de nível,
+          para se obter o efeito representado pelos seus nomes.
+          O <code>ParallaxBackground</code> era responsável por
+          apresentar o seu conteúdo sempre centrado no ecrã
+          e atrás de todas as outras <i>sprites</i> na cena.
+          Por essa razão, estes nodos foram essenciais
+          na fixação do céu do nível ao ecrã.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/ExtraFeatures-2-SkyInParallax.png" title="Hierarquia de nodos ParallaxBackground, ParallaxLayer e a sprite do céu">
+        </div>
+        <p>
+          Para além disto, convém mencionar que o <code>Camera2D</code> do nível
+          tinha um "zoom" (é, realmente, as dimensões da câmara)
+          de 0.7 em ambos os eixos,
+          ou seja, a câmara tinha o zoom aumentado
+          (tinha, realmente, 70% das dimensões originais).
+          No entanto, as dimensões da <i>sprite</i> do céu
+          que cabiam neste estado da câmara foram calculadas estaticamente
+          (exatamente 80% das dimensões da <i>sprite</i>
+          cabiam dentro da câmara com o "zoom" a 100%,
+          portanto, a <i>sprite</i> foi redimensionada para 0.7x0.8=0.56).
+          No potencial caso em que se queira alterar o zoom da câmara do nível,
+          convinha que as dimensões do céu fossem calculadas ao iniciar-se o nível,
+          pelo que se implementou essa alteração.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/ExtraFeatures-3-SkyInParallax.png" title="Processo que redimensiona a sprite do céu, baseando-se no zoom do nodo Camera2D">
+        </div>
       </section>
     </main>
 
