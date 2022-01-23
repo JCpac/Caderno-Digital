@@ -741,6 +741,20 @@
           Para além disso, a velocidade da animação "walking"
           aumentava à medida que o jogador se aproximava da sua velocidade máxima.
         </p>
+        <p>
+          Numa etapa mais próxima do fim do projeto,
+          foi, também, criada uma animação para a morte do jogador.
+          Nesta animação, a <i>sprite</i> do jogador
+          fica intensamente vermelha em algumas <i>frames</i>
+          e treme repetidamente,
+          enquanto que a sua opacidade desvanece ao longo de alguns segundos.
+          Quando a animação acaba,
+          o nodo do jogador no nível emite o sinal <code>died</code>
+          e é removido da cena.
+          Convém mencionar que, dentro do processo da morte do jogador,
+          para além de se ativar esta animação,
+          também se toca um efeito sonoro logo no início da aplicação.
+        </p>
 
         <h3>Cerejas Colecionáveis</h3>
         <p>
@@ -762,8 +776,7 @@
           Esta cena teria um nodo <code>Area2D</code> com uma máscara de colisão
           que possibilitava colisões apenas com o jogador.
           Aquando de se detetar uma colisão,
-          a cereja emitia o sinal <code>collected</code>
-          ("sinais" são os "eventos" do Godot),
+          a cereja emitia o sinal <code>collected</code>,
           o qual indicaria ao <i>script</i> do nível para aumentar a pontuação.
         </p>
         <div class="image-single">
