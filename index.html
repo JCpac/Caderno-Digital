@@ -1002,6 +1002,56 @@
           apresentadas pela interface no <i>script</i> do nível.
         </p>
 
+        <h3>Efeitos Sonoros</h3>
+        <h4>Música</h4>
+        <p>
+          Ambas as músicas usadas no ecrã inicial e no nível
+          originaram do "8 Bit 8 Pack 1.0"
+          e os seus ficheiros denominam-se
+          "Quiet Village.wav" e "Level 2.wav", respetivamente.
+          Ambos os <code>AudioStreamPlayer</code> destas músicas
+          são ativados no início das respetivas cenas.
+        </p>
+
+        <h4>Salto</h4>
+        <p>
+          O efeito sonoro do salto foi criado no "jsfxr".
+          No Godot, usou-se um nodo <code>AudioStreamPlayer</code>
+          com este efeito associado na cena do jogador,
+          o qual era ativado sempre que o jogador realizasse um salto normal
+          ou um salto em parede.
+        </p>
+
+        <h4>Texto</h4>
+        <p>
+          O efeito sonoro do texto a ser apresentado em cadeia
+          na Dialogue Box do "StartSign" na cena do nível
+          também foi criado no "jsfxr".
+          Tal como o som do salto,
+          este novo efeito foi associado a um nodo <code>AudioStreamPlayer</code>,
+          o qual, neste caso, era ativado pelo <i>script</i> do Dialogue Box
+          sempre que uma letra do seu texto era escrita.
+        </p>
+
+        <h4>Morte</h4>
+        <p>
+          O efeito sonoro da morte do jogador é o ficheiro "Explosion_8-bit_Small_01.wav"
+          do "44.1 General SFX Library (Free Sample) 1.0".
+          O nodo <code>AudioStreamPlayer</code> deste efeito é ativado,
+          obviamente, quando o jogador morre,
+          ou seja, quando o tempo do nível acaba
+          ou quando o jogador cai do precipício no início do nível.
+        </p>
+
+        <h4>Apanhar uma Cereja</h4>
+        <p>
+          O efeito sonoro para quando o jogador apanha uma das cerejas colecionáveis
+          é o ficheiro "Biting_Crunchy_Single_Close_01.wav"
+          do "44.1 General SFX Library (Free Sample) 1.0".
+          Mais uma vez, o nodo <code>AudioStreamPlayer</code> deste efeito
+          é ativado na respetiva condição.
+        </p>
+
         <h3>Finalização</h3>
         <p>
           Com o jogo praticamente feito,
