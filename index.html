@@ -772,6 +772,50 @@
           de forma a que elas ficassem a "flutuar" acima do chão.
         </p>
 
+        <h3>Cartazes do Nível</h3>
+        <p>
+          Para se ter maior controlo sobre o início e o fim do nível,
+          decidimos usar uma <i>sprite</i> de um cartaz como marcador.
+          Estes cartazes teriam um nodo <code>Area2D</code>
+          que iria detetar quando o jogador colide com eles,
+          para despelotar os respetivos métodos.
+        </p>
+        <div class="image-single">
+          <img src="images/TP2/Signs-1-BasicSign.png" title="Cartaz com área de colisão visível (caixa azul)">
+        </div>
+
+        <h4>Cartaz de Início</h4>
+        <p>
+          O cartaz no início do nível tem duas funções:
+          começar o temporizador do nível
+          quando o jogador o atravessar ao entrar na caverna
+          e apresentar uma caixa de diálogo com informações sobre o jogo.
+        </p>
+        <p>
+          Criou-se a cena do cartaz de início,
+          incluindo o sinal seu <code>playerHasCrossed</code>,
+          o qual indica ao nível para ativar o temporizador.
+          Visto que, para entrar na caverna,
+          o jogador deve atravessar para o lado direito do cartaz,
+          o sinal é emitido quando a sua posição horizontal
+          é superior à do cartaz quando o jogador sai do seu <code>Area2D</code>.
+        </p>
+        <p>
+          Para se criar o diálogo com o jogador,
+          criou-se uma caixa que indica ao jogador para usar a tecla "Enter"
+          para iniciar a conversa.
+          Em vez de se criar a lógica da caixa de diálogo,
+          optou-se por usar o Dialogue Box do Godot Marketplace.
+          Para o funcionamento deste <i>add-on</i>,
+          foram criadas as várias <i>strings</i> que seriam apresentadas na caixa de diálogo
+          e adicionou-se um efeito sonoro que é ativado repetidamente,
+          enquanto as letras são reveladas em cadeia.
+        </p>
+        <div class="image-row">
+          <img src="images/TP2/Signs-2-StartSignScene.png" title="Cartaz de início com indicação de controlo">
+          <img src="images/TP2/Signs-3-StartSignDialogueBox.png" title="Cartaz de início com o Dialogue Box aberto">
+        </div>
+
         <h3>Interfaces do Nível</h3>
         <h4>Interface do Temporizador</h4>
         <p>
